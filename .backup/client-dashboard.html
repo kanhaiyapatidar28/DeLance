@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Dashboard – DeLance</title>
+  <meta name="description" content="Manage your smart contract escrow, track jobs, and resolve disputes on DeLance." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+<div class="app-layout">
+  <!-- ── Sidebar ──────────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <a href="index.html" class="logo">De<span>Lance</span></a>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Workspace</div>
+      <a href="client-dashboard.html" class="active">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Overview
+      </a>
+      <a href="#">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Post a Job
+      </a>
+      <a href="#">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/></svg>
+        My Jobs
+      </a>
+      <a href="#">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Escrow Status
+      </a>
+      <div class="sidebar-section-label">Resolution</div>
+      <a href="#">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Disputes
+        <span class="tag" style="margin-left:auto;background:#FFF0F0;border-color:#FEBDBD;color:var(--error);padding:2px 7px;font-size:0.68rem;">1</span>
+      </a>
+      <div class="sidebar-section-label">Account</div>
+      <a href="#">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+        Settings
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="freelancer-dashboard.html" style="font-size:0.8rem;color:var(--muted);padding:0 1.25rem;display:block;">Switch to Freelancer →</a>
+    </div>
+  </aside>
+
+  <!-- ── Main ────────────────────────────────────────────────────────────── -->
+  <div class="main-content">
+    <header class="page-header">
+      <div>
+        <div class="label" style="margin-bottom:2px;">Client Terminal</div>
+        <h3 style="font-size:1.05rem;">Dashboard</h3>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="network-badge"><span class="wallet-dot"></span> Ethereum</div>
+        <div class="wallet-badge"><span class="wallet-dot"></span><span class="mono" style="font-size:0.78rem;">0x71c...4f32</span></div>
+        <a href="index.html" class="btn btn-ghost btn-sm">← Home</a>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <!-- Stats -->
+      <div class="stats-row" style="margin-bottom:2rem;">
+        <div class="stat-card">
+          <div class="label">Total in Escrow</div>
+          <div class="stat-value teal"><span data-counter data-target="7800" data-prefix="$">$7,800</span> <span style="font-size:1rem;color:var(--muted);">USDC</span></div>
+          <div style="margin-top:0.4rem;"><span class="tag tag-teal tag-sm">↑ 12% this month</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Active Contracts</div>
+          <div class="stat-value"><span data-counter data-target="3">3</span></div>
+          <div style="margin-top:0.4rem;"><span class="tag tag-sm" style="background:#FFF8EC;border-color:#FDE68A;color:var(--warning);">2 need review</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Completed Jobs</div>
+          <div class="stat-value" style="color:var(--success);"><span data-counter data-target="14">14</span></div>
+          <div style="margin-top:0.4rem;"><span class="tag tag-sm" style="background:#ECFDF5;border-color:#A7F3D0;color:var(--success);">✓ All released</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Total Spent</div>
+          <div class="stat-value"><span data-counter data-target="38400" data-prefix="$">$38,400</span></div>
+          <div style="margin-top:0.4rem;"><span class="tag tag-sm tag-teal">On-chain verified</span></div>
+        </div>
+      </div>
+
+      <!-- Active Jobs -->
+      <div class="section-header" style="margin-bottom:1rem;">
+        <h3 style="font-size:1rem;">Active Jobs</h3>
+        <div class="flex gap-1 items-center">
+          <button class="btn btn-teal btn-sm" onclick="document.getElementById('postJobModal').classList.add('open')">+ Post New Job</button>
+        </div>
+      </div>
+      <div class="jobs-grid" style="margin-bottom:2rem;">
+        <div class="card job-card">
+          <div class="flex justify-between items-center" style="margin-bottom:0.75rem;">
+            <span class="tag tag-sm" style="background:#FFF8EC;border-color:#FDE68A;color:var(--warning);">● In Progress</span>
+            <span class="job-amount">$2,400 USDC</span>
+          </div>
+          <h3 class="job-title" style="margin-bottom:0.75rem;">Smart Contract Audit</h3>
+          <div class="job-freelancer" style="margin-bottom:1rem;">
+            <div class="mini-avatar" style="background:var(--primary-light);color:var(--primary);">A</div>
+            <div>
+              <div style="font-size:0.88rem;font-weight:600;color:var(--dark);">Alex Rivers</div>
+              <div class="mono" style="font-size:0.75rem;color:var(--muted);">0xBC3...91AF</div>
+            </div>
+          </div>
+          <div style="margin-bottom:0.5rem;">
+            <div class="flex justify-between" style="margin-bottom:4px;">
+              <span class="label">Milestone 3 of 5</span>
+              <span class="label" style="color:var(--primary);">60%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+          </div>
+          <div class="job-actions">
+            <button class="btn btn-outline btn-sm" onclick="alert('Contract: 0x9f2...4c1a')">View Contract</button>
+            <button class="btn btn-ghost btn-sm">Message</button>
+          </div>
+        </div>
+
+        <div class="card job-card" style="border-top:2px solid var(--primary);">
+          <div class="flex justify-between items-center" style="margin-bottom:0.75rem;">
+            <span class="tag tag-teal tag-sm">● Under Review</span>
+            <span class="job-amount">$1,800 USDC</span>
+          </div>
+          <h3 class="job-title" style="margin-bottom:0.75rem;">UI/UX Redesign</h3>
+          <div class="job-freelancer" style="margin-bottom:1rem;">
+            <div class="mini-avatar" style="background:#F9F0FF;color:#8B5CF6;">S</div>
+            <div>
+              <div style="font-size:0.88rem;font-weight:600;color:var(--dark);">Sarah Chen</div>
+              <div class="mono" style="font-size:0.75rem;color:var(--muted);">0x4D8...72CA</div>
+            </div>
+          </div>
+          <div style="margin-bottom:0.5rem;">
+            <div class="flex justify-between" style="margin-bottom:4px;">
+              <span class="label">Awaiting Approval</span>
+              <span class="label" style="color:var(--primary);">90%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div>
+          </div>
+          <div class="job-actions">
+            <button class="btn btn-teal btn-sm" onclick="document.getElementById('approveModal').classList.add('open')">✓ Approve & Release</button>
+            <button class="btn btn-ghost btn-sm">Request Changes</button>
+          </div>
+        </div>
+
+        <div class="card job-card" style="border-top:2px solid var(--success);">
+          <div class="flex justify-between items-center" style="margin-bottom:0.75rem;">
+            <span class="tag tag-sm" style="background:#ECFDF5;border-color:#A7F3D0;color:var(--success);">● Complete</span>
+            <span class="job-amount" style="color:var(--success);">$3,600 USDC</span>
+          </div>
+          <h3 class="job-title" style="margin-bottom:0.75rem;">Backend API Integration</h3>
+          <div class="job-freelancer" style="margin-bottom:1rem;">
+            <div class="mini-avatar" style="background:#ECFDF5;color:var(--success);">M</div>
+            <div>
+              <div style="font-size:0.88rem;font-weight:600;color:var(--dark);">Mike Ross</div>
+              <div class="mono" style="font-size:0.75rem;color:var(--muted);">0xF7E...3B90</div>
+            </div>
+          </div>
+          <div style="margin-bottom:0.5rem;">
+            <div class="flex justify-between" style="margin-bottom:4px;">
+              <span class="label">Payment Released</span>
+              <span class="label" style="color:var(--success);">✓ Done</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:100%;background:var(--success);"></div></div>
+          </div>
+          <div class="job-actions">
+            <button class="btn btn-ghost btn-sm" onclick="alert('Tx: 0xa91...22b3')">View Receipt</button>
+            <button class="btn btn-outline btn-sm">Leave Review</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom two-col -->
+      <div class="two-col">
+        <div class="card" style="border-top:2px solid var(--primary);">
+          <div class="flex justify-between items-center" style="margin-bottom:1.5rem;">
+            <h3 style="font-size:0.95rem;">Smart Contract Escrow Flow</h3>
+            <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:0.85rem;color:var(--primary);font-weight:700;">Locked: $7,800 USDC</span>
+          </div>
+          <div class="escrow-flow-row">
+            <div class="escrow-fl-step done"><div class="escrow-fl-icon">💰</div><div class="label" style="text-align:center;margin-top:4px;font-size:0.65rem;">Client<br/>Deposits</div></div>
+            <div class="escrow-fl-line done"></div>
+            <div class="escrow-fl-step done"><div class="escrow-fl-icon">🔒</div><div class="label" style="text-align:center;margin-top:4px;font-size:0.65rem;">Locked in<br/>Contract</div></div>
+            <div class="escrow-fl-line done"></div>
+            <div class="escrow-fl-step active"><div class="escrow-fl-icon">🛠️</div><div class="label" style="text-align:center;margin-top:4px;font-size:0.65rem;">Freelancer<br/>Delivers</div></div>
+            <div class="escrow-fl-line"></div>
+            <div class="escrow-fl-step"><div class="escrow-fl-icon">👁️</div><div class="label" style="text-align:center;margin-top:4px;font-size:0.65rem;">Client<br/>Reviews</div></div>
+            <div class="escrow-fl-line"></div>
+            <div class="escrow-fl-step"><div class="escrow-fl-icon">⚡</div><div class="label" style="text-align:center;margin-top:4px;font-size:0.65rem;">Auto-<br/>Released</div></div>
+          </div>
+          <div class="escrow-note">🔒 Funds inaccessible until conditions are met. <strong>Code is law.</strong></div>
+        </div>
+
+        <div class="card dispute-card">
+          <div class="dispute-header">
+            <div>
+              <div class="label" style="color:var(--warning);margin-bottom:4px;">⚠ Open Dispute</div>
+              <h3 style="font-size:0.95rem;">Frontend Performance</h3>
+              <div class="label" style="margin-top:2px;">$950 USDC in dispute</div>
+            </div>
+            <span class="tag tag-sm" style="background:#FFF8EC;border-color:#FDE68A;color:var(--warning);">Pending</span>
+          </div>
+          <p style="font-size:0.84rem;color:var(--muted);line-height:1.65;margin-bottom:0.75rem;">Client claims deliverables didn't meet agreed performance benchmarks. Awaiting DAO arbitration.</p>
+          <div class="dispute-timeline">
+            <div class="d-step done">Filed</div>
+            <div class="d-connector done"></div>
+            <div class="d-step done">Evidence</div>
+            <div class="d-connector active"></div>
+            <div class="d-step active">DAO Vote</div>
+            <div class="d-connector"></div>
+            <div class="d-step">Resolved</div>
+          </div>
+          <div class="dispute-actions">
+            <button class="btn btn-outline btn-sm">Add Evidence</button>
+            <button class="btn btn-teal btn-sm" onclick="document.getElementById('daoModal').classList.add('open')">Submit to DAO →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Approve Modal -->
+<div class="modal-overlay" id="approveModal" onclick="this.classList.remove('open')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h3 style="margin-bottom:0.5rem;">Approve &amp; Release Payment</h3>
+    <div class="label" style="margin-bottom:1rem;">UI/UX Redesign · 0x4D8...72CA</div>
+    <p style="margin-bottom:0.75rem;font-size:0.9rem;">You are releasing <strong style="color:var(--primary);">$1,800 USDC</strong> from smart contract escrow to Sarah Chen's wallet.</p>
+    <div class="modal-warning">⚠ This action is irreversible. The smart contract will automatically execute and transfer funds.</div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="document.getElementById('approveModal').classList.remove('open')">Cancel</button>
+      <button class="btn btn-teal" onclick="document.getElementById('approveModal').classList.remove('open')">✓ Release $1,800 USDC</button>
+    </div>
+  </div>
+</div>
+
+<!-- DAO Modal -->
+<div class="modal-overlay" id="daoModal" onclick="this.classList.remove('open')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h3 style="margin-bottom:0.5rem;">Submit to DAO Arbitration</h3>
+    <p style="font-size:0.9rem;margin-bottom:0.75rem;">Randomly-selected neutral arbitrators will review this dispute. Takes 3–5 business days.</p>
+    <div class="modal-warning">ℹ A small juror fee (~$15) is deducted from the escrowed amount regardless of outcome.</div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="document.getElementById('daoModal').classList.remove('open')">Cancel</button>
+      <button class="btn btn-primary" onclick="document.getElementById('daoModal').classList.remove('open')">⚖ Submit to DAO</button>
+    </div>
+  </div>
+</div>
+
+<!-- Post Job Modal -->
+<div class="modal-overlay" id="postJobModal" onclick="this.classList.remove('open')">
+  <div class="modal" onclick="event.stopPropagation()" style="max-width:520px;">
+    <h3 style="margin-bottom:0.25rem;">Post a New Job</h3>
+    <div class="label" style="margin-bottom:1.25rem;">Funds will be locked in smart contract escrow</div>
+    <div style="display:flex;flex-direction:column;gap:0.85rem;">
+      <div><div class="label" style="margin-bottom:4px;">Job Title</div><input type="text" placeholder="e.g. Solidity Smart Contract Development" /></div>
+      <div><div class="label" style="margin-bottom:4px;">Budget (USDC)</div><input type="number" placeholder="2500" /></div>
+      <div><div class="label" style="margin-bottom:4px;">Description</div><textarea placeholder="Describe the work, deliverables, and acceptance criteria..." style="min-height:90px;"></textarea></div>
+    </div>
+    <div class="modal-warning">🔒 Funds will be locked in escrow on posting. Ensure your wallet has sufficient USDC.</div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="document.getElementById('postJobModal').classList.remove('open')">Cancel</button>
+      <button class="btn btn-teal" onclick="document.getElementById('postJobModal').classList.remove('open')">Lock Funds & Post →</button>
+    </div>
+  </div>
+</div>
+
+<script src="animations.js"></script>
+<script>
+  document.querySelectorAll('.sidebar-nav a').forEach(a => {
+    a.addEventListener('click', function(e) {
+      if(!this.href.includes('freelancer') && !this.href.includes('index')) e.preventDefault();
+      document.querySelectorAll('.sidebar-nav a').forEach(x => x.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

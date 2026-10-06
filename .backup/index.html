@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeLance — Freelance with On-Chain Trust</title>
+  <meta name="description" content="The decentralized freelance marketplace powered by smart contract escrow. No middlemen, instant settlement, global talent." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+
+<!-- ─── Navbar ─────────────────────────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">De<span>Lance</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Find Freelancers</a></li>
+    <li><a href="#compare">Pricing</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="client-dashboard.html">Solutions</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="client-dashboard.html" class="btn btn-ghost btn-sm">Log in</a>
+    <a href="client-dashboard.html" class="btn btn-primary btn-sm">Join →</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ─── HERO ──────────────────────────────────────────────────────────────── -->
+  <section class="hero" id="home">
+
+    <!-- Big display headline -->
+    <div class="hero-headline-wrap">
+      <div class="hero-display">
+        FREELANCE
+        <span class="hero-display-outline" style="margin-left:1.5rem;">MARKETPLACE</span>
+        <span style="font-size:2.5rem;margin-left:auto;margin-right:1rem;color:var(--muted);font-weight:400;text-transform:none;font-family:Inter,sans-serif;letter-spacing:-0.01em;align-self:flex-end;padding-bottom:0.6rem;">↗</span>
+      </div>
+    </div>
+
+    <!-- Two-column content -->
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-top reveal">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.35rem;">
+            <span class="tag tag-teal" style="font-size:0.72rem;">● Live on Ethereum</span>
+            <span class="tag tag-teal" style="font-size:0.72rem;">Polygon</span>
+            <span class="tag tag-teal" style="font-size:0.72rem;">Arbitrum</span>
+          </div>
+          <p class="hero-tagline">A DeLance marketplace connects you with talented freelancers using smart contracts that protect both sides — facilitating a project from start to finish.</p>
+
+          <!-- Search -->
+          <div class="hero-search-wrap">
+            <div class="hero-search">
+              <svg style="margin-left:1rem;color:var(--faint);flex-shrink:0;" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" placeholder="Search for any service..." id="heroSearch"/>
+              <button type="button">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                Search
+              </button>
+            </div>
+            <div class="popular-tags reveal reveal-delay-1">
+              <span class="popular-label">Popular:</span>
+              <span class="tag tag-sm" onclick="document.getElementById('heroSearch').value='Smart Contract'; this.classList.toggle('tag-teal')">Smart Contract</span>
+              <span class="tag tag-sm" onclick="document.getElementById('heroSearch').value='Logo Design'; this.classList.toggle('tag-teal')">Logo Design</span>
+              <span class="tag tag-sm" onclick="document.getElementById('heroSearch').value='3D Animation'; this.classList.toggle('tag-teal')">3D Animation</span>
+              <span class="tag tag-sm" onclick="document.getElementById('heroSearch').value='UI/UX'; this.classList.toggle('tag-teal')">UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trusted Freelancers -->
+        <div class="hero-bottom reveal reveal-delay-2">
+          <div class="avatar-stack">
+            <div class="av" style="background:#EAF5F3;color:var(--primary);">A</div>
+            <div class="av" style="background:#F9F0FF;color:#8B5CF6;">S</div>
+            <div class="av" style="background:#FFF0F0;color:#E53E3E;">M</div>
+            <div class="av" style="background:#FFF8EC;color:#D97706;">J</div>
+            <div class="av" style="background:#F0F9FF;color:#0284C7;">R</div>
+          </div>
+          <div>
+            <div class="trusted-count" data-counter data-target="3400">3,400+</div>
+            <div class="trusted-label">Trusted Freelancers</div>
+          </div>
+          <div style="margin-left:1rem;">
+            <div class="stars" style="font-size:0.85rem;">★★★★★</div>
+            <div class="trusted-sub">4.9 / 5 satisfaction</div>
+          </div>
+          <div style="margin-left:auto;">
+            <a href="freelancer-dashboard.html" class="btn btn-teal btn-sm">Find Talent →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="hero-photo-side">
+        <img src="hero-photo.png" alt="Freelancer working on laptop" />
+        <div class="hero-photo-overlay">
+          <div class="hero-profile-card">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="av" style="width:38px;height:38px;background:var(--primary-light);color:var(--primary);font-family:'Bricolage Grotesque',sans-serif;font-weight:700;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">S</div>
+              <div>
+                <div class="profile-card-name">Audrey M.</div>
+                <div class="profile-card-role">UI/UX Designer · Remote</div>
+              </div>
+            </div>
+            <div class="profile-card-row"><span class="stars" style="font-size:0.7rem;">★★★★★</span> <strong>4.9</strong></div>
+            <div class="profile-card-row">
+              <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/></svg>
+              <strong>63+</strong> projects completed
+            </div>
+            <div class="profile-card-rate">$90 / hour</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── POPULAR SERVICES ───────────────────────────────────────────────────── -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="services-header">
+        <div>
+          <div class="section-eyebrow reveal">Popular Services</div>
+          <h2 class="reveal" style="max-width:360px;">Find exactly the right service</h2>
+        </div>
+        <div class="services-nav reveal">
+          <button aria-label="Previous">←</button>
+          <button aria-label="Next">→</button>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-card-img">
+            <img src="service-3d.png" alt="3D Artist" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-title">3D Artist</div>
+            <div class="service-card-tags">
+              <span class="tag tag-sm">3D Modeling</span>
+              <span class="tag tag-sm">Animation</span>
+              <span class="tag tag-sm">Rendering</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-card-img">
+            <img src="service-video.png" alt="Video & Explainer" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-title">Video &amp; Explainer</div>
+            <div class="service-card-tags">
+              <span class="tag tag-sm">Editing</span>
+              <span class="tag tag-sm">Motion Graphic</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-card-img">
+            <img src="service-design.png" alt="Graphic Design" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-title">Graphic Design</div>
+            <div class="service-card-tags">
+              <span class="tag tag-sm">Logo Design</span>
+              <span class="tag tag-sm">Branding</span>
+            </div>
+          </div>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-card-img">
+            <img src="service-marketing.png" alt="Digital Marketing" loading="lazy" />
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-title">Digital Marketing</div>
+            <div class="service-card-tags">
+              <span class="tag tag-sm">Affiliate Marketing</span>
+              <span class="tag tag-sm">Social</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── OUTSTANDING WORKMANSHIP ────────────────────────────────────────────── -->
+  <section class="workmanship-section" id="about">
+    <div class="workmanship-banner">
+      <img src="workmanship-photo.png" alt="Professional freelancer" />
+      <div class="workmanship-overlay"></div>
+      <div class="workmanship-content">
+        <div class="section-eyebrow reveal" style="color:rgba(200,230,225,0.8);">Top Talent</div>
+        <h2 class="reveal">Find outstanding<br/>workmanship.</h2>
+        <p class="reveal reveal-delay-1">The best way to verify and de-risk work with a fully customized freelance project. Our platform guarantees with freelancers, on-chain, and every project transparent every step.</p>
+        <a href="freelancer-dashboard.html" class="btn btn-white reveal reveal-delay-2">Browse Freelancers →</a>
+      </div>
+      <button class="play-btn" aria-label="Play video" title="Watch how it works">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M5 3l14 9-14 9V3z"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ─── STATS ───────────────────────────────────────────────────────────────── -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-strip-inner reveal">
+        <div class="stat-strip-item">
+          <span class="stat-strip-num teal-num" data-counter data-target="14200000" data-prefix="$">$14.2M</span>
+          <span class="stat-strip-label">Secured in Escrow</span>
+        </div>
+        <div class="stat-strip-div"></div>
+        <div class="stat-strip-item">
+          <span class="stat-strip-num" data-counter data-target="8400">8,400+</span>
+          <span class="stat-strip-label">Contracts Completed</span>
+        </div>
+        <div class="stat-strip-div"></div>
+        <div class="stat-strip-item">
+          <span class="stat-strip-num teal-num" data-counter data-target="142">142</span>
+          <span class="stat-strip-label">Countries</span>
+        </div>
+        <div class="stat-strip-div"></div>
+        <div class="stat-strip-item">
+          <span class="stat-strip-num">0</span>
+          <span class="stat-strip-label">Platform Employees in the Loop</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── WHY CHOOSE US ─────────────────────────────────────────────────────── -->
+  <section class="why-section" id="why">
+    <div class="container">
+      <div class="why-grid">
+        <div>
+          <div class="section-eyebrow reveal">Why Choose Us?</div>
+          <h2 class="reveal" style="margin-bottom:0.5rem;">Guaranteed trust, built into every contract.</h2>
+          <p class="reveal" style="color:var(--muted);font-size:0.9rem;max-width:380px;line-height:1.7;margin-bottom:2rem;">Choose DeLance out of all services and freelancers to access an everything-in-one freelance toolkit, always.</p>
+          <div class="why-features-list">
+            <div class="why-feature reveal">
+              <div class="why-icon">🤝</div>
+              <div>
+                <h4>Seamless Collaboration</h4>
+                <p>On our friendly interface you share every collaboration easier. Communicate with confidence, and track project progress every step.</p>
+              </div>
+            </div>
+            <div class="why-feature reveal reveal-delay-1">
+              <div class="why-icon">🌐</div>
+              <div>
+                <h4>Support and Community</h4>
+                <p>Join a diverse ecosystem of Freelancers and Clients who are passionate about their craft. Highly-accessible 24/7 support when you need help and have questions.</p>
+              </div>
+            </div>
+            <div class="why-feature reveal reveal-delay-2">
+              <div class="why-icon">🔒</div>
+              <div>
+                <h4>Secure and Reliable</h4>
+                <p>Your safety and security are top priorities. We safeguard both parties using smart contract escrow and decentralized governance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-right">
+          <div class="why-photo">
+            <img src="workmanship-photo.png" alt="Professional at work" />
+          </div>
+          <div class="guarantee-stamp">
+            <span style="font-size:1.4rem;">✓</span>
+            <span>Quality</span>
+            <span>Guarantee</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIAL ────────────────────────────────────────────────────────── -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-eyebrow reveal" style="text-align:center;display:block;">What Our Customers Say</div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="stars" style="font-size:1.1rem;margin-bottom:1rem;">★★★★★</div>
+        <p class="testimonial-quote">"I honestly DeLance Freelance for a project I and couldn't be happier with the results. Platform manages all project interactions really clearly, was very communicative throughout the entire process, and highly recommend that their team truly cares about helping you receive the best value possible."</p>
+        <div class="testimonial-author">
+          <div class="av">T</div>
+          <div>
+            <div class="testimonial-author-name">Thomas Kutner</div>
+            <div class="testimonial-author-role">CTO at Starlink</div>
+          </div>
+          <div class="testi-logo" style="margin-left:auto;">⬡ CAKAR</div>
+        </div>
+      </div>
+      <div class="testi-nav">
+        <button class="testi-dot active" aria-label="Slide 1"></button>
+        <button class="testi-dot" aria-label="Slide 2"></button>
+        <button class="testi-dot" aria-label="Slide 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCED FREELANCERS ───────────────────────────────────────────── -->
+  <section class="freelancers-section">
+    <div class="container">
+      <div class="freelancers-inner">
+        <div class="freelancer-avatars reveal">
+          <div class="freelancer-av-item" style="background:#EAF5F3;color:var(--primary);">A</div>
+          <div class="freelancer-av-item" style="background:#F9F0FF;color:#8B5CF6;">S</div>
+          <div class="freelancer-av-item" style="background:#FFF0F0;color:#E53E3E;">M</div>
+          <div class="freelancer-av-item" style="background:#FFF8EC;color:#D97706;">J</div>
+          <div class="freelancer-av-item" style="background:#F0F9FF;color:#0284C7;">R</div>
+          <div class="freelancer-av-item" style="background:#EAF5F3;color:var(--primary);">K</div>
+          <div class="freelancer-av-item" style="background:#FFF0E6;color:#EA580C;">B</div>
+          <div class="freelancer-av-item" style="background:#F0F9FF;color:#0369A1;">L</div>
+          <div class="freelancer-av-item" style="background:#F5F0FF;color:#7C3AED;">N</div>
+          <div class="freelancer-av-item" style="background:#EAF5F3;color:var(--primary);">P</div>
+          <div class="freelancer-av-item" style="background:#FFF0F6;color:#DB2777;">V</div>
+          <div class="freelancer-av-item" style="background:#F5F5E8;color:#65A30D;">H</div>
+          <div class="freelancer-av-item" style="background:#EFF6FF;color:#1D4ED8;">G</div>
+          <div class="freelancer-av-item" style="background:#FFF0F0;color:#E53E3E;">D</div>
+          <div class="freelancer-av-item" style="background:#EAF5F3;color:var(--primary);">Z</div>
+          <div class="freelancer-av-item" style="background:#F9F0FF;color:#8B5CF6;">O</div>
+          <div class="freelancer-av-item" style="background:#FFF8EC;color:#D97706;">C</div>
+          <div class="freelancer-av-item" style="background:#F0F9FF;color:#0284C7;">F</div>
+        </div>
+
+        <div class="reveal">
+          <div class="section-eyebrow" style="margin-bottom:0.75rem;">★★★★★ Top Rated</div>
+          <h2 style="margin-bottom:1rem;">Experienced<br/>Freelancers</h2>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem;">Our best freelancers possess a deep understanding of their craft, delivering trust by staying always available.</p>
+          <a href="freelancer-dashboard.html" class="btn btn-primary">Start Finding →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COMPARE ────────────────────────────────────────────────────────────── -->
+  <section class="compare-section" id="compare">
+    <div class="container">
+      <div class="section-eyebrow reveal" style="text-align:center;display:block;">Platform Comparison</div>
+      <h2 class="reveal" style="text-align:center;margin-bottom:0.5rem;">DeLance vs Legacy Platforms</h2>
+      <p class="reveal" style="text-align:center;color:var(--muted);max-width:480px;margin:0 auto 2.5rem;">A fully transparent, honest comparison.</p>
+
+      <div class="card reveal" style="padding:0;overflow:hidden;border-radius:var(--radius-xl);">
+        <div class="compare-grid compare-header">
+          <div class="compare-feature">Feature</div>
+          <div class="compare-col col-delance">DeLance</div>
+          <div class="compare-col col-legacy">Upwork / Fiverr</div>
+        </div>
+        <div class="compare-row"><div class="compare-feature">Service Fee</div><div class="compare-col good">✓ ~1–3% (gas only)</div><div class="compare-col bad">✗ 10–27% deducted</div></div>
+        <div class="compare-row"><div class="compare-feature">Global Access</div><div class="compare-col good">✓ Every country</div><div class="compare-col bad">✗ Many countries blocked</div></div>
+        <div class="compare-row"><div class="compare-feature">Account Censorship</div><div class="compare-col good">✓ Cannot be banned</div><div class="compare-col bad">✗ Platform can ban & seize funds</div></div>
+        <div class="compare-row"><div class="compare-feature">Payment Settlement</div><div class="compare-col good">✓ Instant on-chain</div><div class="compare-col bad">✗ 7–14 day transfers</div></div>
+        <div class="compare-row"><div class="compare-feature">Dispute Resolution</div><div class="compare-col good">✓ Neutral DAO arbitrators</div><div class="compare-col bad">✗ Biased platform staff</div></div>
+        <div class="compare-row" style="border-bottom:none;"><div class="compare-feature">Bank Account Required</div><div class="compare-col good">✓ No — wallet only</div><div class="compare-col bad">✗ Yes, excludes billions</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA ────────────────────────────────────────────────────────────────── -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="section-eyebrow" style="color:var(--accent);display:block;margin-bottom:1rem;">Get Started</div>
+        <h2>Ready to work<br/>trustlessly?</h2>
+        <p>No account to create. No identity verification. Just connect your wallet and start hiring — or working — in under 60 seconds.</p>
+        <div class="cta-actions">
+          <a href="client-dashboard.html" class="btn btn-white btn-lg">Post a Job</a>
+          <a href="freelancer-dashboard.html" class="btn btn-teal btn-lg">Find Work →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ─── Footer ─────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="nav-logo" style="color:#fff;margin-bottom:1rem;display:inline-block;">De<span style="color:var(--accent);">Lance</span></a>
+        <p style="font-size:0.84rem;color:rgba(255,255,255,0.4);line-height:1.7;max-width:240px;">The trustless freelance marketplace. Smart contract powered, globally accessible.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Report Issue</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Customer Stories</a></li>
+          <li><a href="#">Smart Contract Docs</a></li>
+          <li><a href="#">Security Audit</a></li>
+          <li><a href="#">Directory Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Freelance</h4>
+        <ul>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Browse Jobs</a></li>
+          <li><a href="#">DAO Governance</a></li>
+          <li><a href="#">Dispute Center</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DeLance, Inc.</span>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="animations.js"></script>
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+  // Scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+  // Testimonial dots
+  document.querySelectorAll('.testi-dot').forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      document.querySelectorAll('.testi-dot').forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
