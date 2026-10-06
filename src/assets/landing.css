@@ -3,7 +3,7 @@
 /* ── Hero Section ─────────────────────────────────────────────────────────── */
 .hero {
   padding-top: 64px; /* navbar height */
-  min-height: 100vh;
+  min-height: max(100vh, 700px);
   background: var(--bg-warm);
   position: relative; overflow: hidden;
   display: flex; flex-direction: column;
