@@ -564,13 +564,13 @@ html.dark .workmanship-glass-card {
   
   /* Bubbles */
   .bubble-menu-outer-wrap { margin-left: 0 !important; }
-  .bubble-menu-container { overflow-x: hidden; width: 100%; }
-  .bubble-row { gap: 0.5rem; flex-wrap: wrap !important; justify-content: flex-start; }
-  .bubble-bottom-row { margin-left: 0 !important; margin-top: 0 !important; }
+  .bubble-menu-container { overflow: visible !important; width: 100%; align-items: center !important; padding: 1.5rem 0 !important; }
+  .bubble-row { gap: 0.75rem; flex-wrap: wrap !important; justify-content: center !important; margin-bottom: 0.5rem; }
+  .bubble-bottom-row { margin-left: 0 !important; margin-top: -0.8rem !important; }
   .bubble-item {
-    padding: 0.65rem 1.25rem !important;
+    padding: 0.6rem 1.1rem !important;
     font-size: 0.85rem !important;
-    transform: none !important;
+    /* Removed transform: none so inline rotations apply */
   }
   
   /* Compare grid */
