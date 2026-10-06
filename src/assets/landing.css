@@ -486,6 +486,19 @@ html.dark .workmanship-glass-card {
   white-space: nowrap;
 }
 
+/* ── Hero Search Bar Input Reset ─────────────────────────────────────────── */
+#heroSearchBar input,
+#heroSearchBar input:focus,
+#heroSearchBar input:hover,
+#heroSearchBar input:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
 /* ── Mobile Responsiveness Fixes ────────────────────────────────────────── */
 @media (max-width: 850px) {
   /* Hero Adjustments */

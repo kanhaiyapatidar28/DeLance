@@ -180,10 +180,16 @@ const Home = () => {
                       placeholder="Search for any service..."
                       id="heroSearch"
                       style={{
-                        flex: 1, border: 'none', background: 'transparent',
-                        padding: '0 0.75rem', color: '#fff',
-                        fontFamily: 'Inter,sans-serif', fontSize: '0.9rem',
+                        flex: 1,
+                        border: 'none',
                         outline: 'none',
+                        boxShadow: 'none',
+                        background: 'transparent',
+                        borderRadius: '0px',
+                        padding: '0 0.75rem',
+                        color: '#fff',
+                        fontFamily: 'Inter,sans-serif',
+                        fontSize: '0.9rem',
                       }}
                     />
 
