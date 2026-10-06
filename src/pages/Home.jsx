@@ -216,7 +216,7 @@ const Home = () => {
                   {/* POPULAR SERVICES - BUBBLE MENU MOVED UNDER SEARCH */}
                   <div style={{ marginTop: '2.5rem', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', position: 'relative', zIndex: 50 }}>
                       <div className="section-eyebrow" style={{ marginBottom: '0.5rem', fontSize: '0.85rem' }}>Popular Services</div>
-                      <div style={{ marginLeft: '-1rem' }}>
+                      <div className="bubble-menu-outer-wrap" style={{ marginLeft: '-1rem' }}>
                         <BubbleMenu 
                           logo={<span style={{ fontWeight: 800, fontSize: '1.05rem', letterSpacing: '-0.02em', color: '#111' }}>Categories</span>}
                           items={popularItems}
