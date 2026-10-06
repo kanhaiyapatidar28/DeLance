@@ -108,7 +108,7 @@ export default function Navbar() {
           </Link>
 
           {/* ── CENTER LINKS with sliding pill indicator ── */}
-          <div style={{ position: 'relative', zIndex: 1 }}
+          <div className="nav-center-links" style={{ position: 'relative', zIndex: 1 }}
             onMouseLeave={() => setHoverIdx(null)}>
 
             {/* Sliding hover pill */}
@@ -144,7 +144,7 @@ export default function Navbar() {
           </div>
 
           {/* ── ACTIONS ──────────────────────────────── */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0, position: 'relative', zIndex: 1 }}>
+          <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0, position: 'relative', zIndex: 1 }}>
 
             {/* Theme Toggle Button */}
             <button

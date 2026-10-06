@@ -499,3 +499,32 @@ textarea { resize: vertical; }
 
 /* ── main z-index ─────────────────────────────────────────────────────────── */
 main { position: relative; z-index: 1; }
+
+/* ── Mobile Layout Overrides ──────────────────────────────────────────────── */
+@media (max-width: 850px) {
+  /* Navbar Overrides */
+  .nav-center-links { display: none !important; }
+  .nav-actions { display: none !important; }
+  
+  nav, .navbar {
+    height: 54px !important;
+    padding: 0 1rem !important;
+    justify-content: center !important;
+  }
+  
+  /* Fix layout when sidebar hides */
+  .app-layout { flex-direction: column !important; }
+  .main-content { width: 100% !important; }
+  
+  /* Modal responsive */
+  .modal, .dashboard-modal { width: 95% !important; padding: 1.5rem 1rem !important; margin: auto !important; }
+  
+  /* Typography Scale */
+  h1 { font-size: clamp(2.2rem, 5vw, 4rem) !important; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.5rem) !important; }
+}
+
+@media (max-width: 500px) {
+  .hero-bottom { padding: 1rem 0 !important; }
+  .btn-lg { width: 100% !important; padding: 1rem !important; justify-content: center !important; margin-bottom: 0.5rem !important; }
+}

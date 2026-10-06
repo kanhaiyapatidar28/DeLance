@@ -446,3 +446,65 @@ html.dark .workmanship-glass-card {
 .cta-inner h2 { color: #fff; margin-bottom: 1rem; }
 .cta-inner p { color: rgba(255,255,255,0.55); margin-bottom: 2rem; font-size: 0.9rem; line-height: 1.7; }
 .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── Bubble Menu Styles ──────────────────────────────────────────────────── */
+.bubble-menu-container {
+  display: flex; flexDirection: column; align-items: flex-start; justify-content: center; gap: 0.5rem; padding: 1rem 0;
+  width: 100%;
+}
+.bubble-row {
+  display: flex; align-items: center; justify-content: flex-start; gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.bubble-bottom-row {
+  margin-top: -0.4rem; margin-left: 4.5rem;
+}
+.bubble-item {
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem 2.25rem; border-radius: 100px;
+  font-size: 1.1rem; line-height: 1.2; text-align: center;
+  font-weight: 500; font-family: "Inter", sans-serif;
+  letter-spacing: -0.02em; text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  position: relative; cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── Mobile Responsiveness Fixes ────────────────────────────────────────── */
+@media (max-width: 850px) {
+  /* Hero Adjustments */
+  .hero-headline-wrap .hero-display { font-size: clamp(2.5rem, 8vw, 4rem) !important; }
+  .hero-left { padding: 2rem 1rem !important; }
+  .hero-bottom { flex-direction: column; align-items: flex-start !important; gap: 0.75rem !important; }
+  .avatar-stack, .trusted-count, .trusted-sub, .stars { margin-left: 0 !important; }
+  .hero-bottom > div { margin-left: 0 !important; }
+  .hero-bottom > div:last-child { margin-left: 0 !important; width: 100%; margin-top: 1rem; }
+  
+  /* Form & Search */
+  #heroSearchBar { flex-direction: column; height: auto !important; padding: 8px; border-radius: 16px !important; }
+  #heroSearchBar > div:first-child, #heroSearchBar > svg { display: none !important; }
+  #heroSearchBar input { padding: 10px !important; width: 100% !important; margin-bottom: 8px; }
+  #heroSearchBar > div:last-child { width: 100%; padding-right: 0 !important; }
+  #heroSearchBar button { width: 100%; justify-content: center; border-radius: 8px !important; }
+  
+  /* Grids */
+  .why-grid, .workmanship-grid-v2 { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  
+  /* Bubbles */
+  .bubble-menu-container { overflow-x: hidden; width: 100%; }
+  .bubble-row { gap: 0.5rem; flex-wrap: wrap; justify-content: flex-start; }
+  .bubble-bottom-row { margin-left: 0; margin-top: 0; }
+  .bubble-item { padding: 0.65rem 1.25rem; font-size: 0.85rem; }
+  
+  /* Compare grid */
+  .compare-grid, .compare-row { padding: 0.5rem; font-size: 0.75rem; grid-template-columns: 1fr 1fr 1fr !important; }
+  .compare-feature { font-size: 0.7rem; word-break: break-word; }
+  .compare-col { font-size: 0.7rem; word-break: break-word; }
+}
+
+@media (max-width: 600px) {
+  .stat-strip-item { width: 100%; margin-bottom: 1.5rem; }
+  .stats-strip-inner { flex-direction: column; gap: 0; }
+  .services-grid { grid-template-columns: 1fr !important; }
+  .workmanship-glass-card { padding: 1.5rem !important; }
+}

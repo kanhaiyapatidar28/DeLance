@@ -22,6 +22,7 @@ const BubbleItem = ({ item }) => {
 
   return (
     <div
+      className="bubble-item"
       onClick={handleClick}
       aria-label={item.ariaLabel}
       onMouseEnter={() => setIsHovered(true)}
@@ -32,21 +33,6 @@ const BubbleItem = ({ item }) => {
         color: isHovered && item.hoverStyles ? item.hoverStyles.textColor : '#111111',
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         zIndex: isHovered ? 10 : 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '1rem 2.25rem',
-        borderRadius: '100px',
-        fontSize: '1.1rem',
-        lineHeight: '1.2',
-        textAlign: 'center',
-        fontWeight: '500',
-        fontFamily: '"Inter", sans-serif',
-        letterSpacing: '-0.02em',
-        textDecoration: 'none',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
-        position: 'relative',
-        cursor: 'pointer',
       }}
     >
       {item.label}
@@ -62,9 +48,9 @@ const BubbleMenu = ({ items = [] }) => {
   const bottomRow = items.slice(mid);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: '0.5rem', padding: '1rem 0' }}>
+    <div className="bubble-menu-container">
       {/* Top Row */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '0.8rem' }}>
+      <div className="bubble-row">
         {topRow.map((item, i) => (
           <div key={`top-${i}`}>
              <BubbleItem item={item} />
@@ -72,7 +58,7 @@ const BubbleMenu = ({ items = [] }) => {
         ))}
       </div>
       {/* Bottom Row */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '0.8rem', marginTop: '-0.4rem', marginLeft: '4.5rem' }}>
+      <div className="bubble-row bubble-bottom-row">
         {bottomRow.map((item, i) => (
           <div key={`bottom-${i}`}>
              <BubbleItem item={item} />
