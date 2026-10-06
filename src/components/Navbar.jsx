@@ -14,6 +14,7 @@ export default function Navbar() {
   const [scrolled, setScrolled]     = useState(false);
   const [hoverIdx, setHoverIdx]     = useState(null);
   const [pillStyle, setPillStyle]   = useState({});
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const linksRef = useRef([]);
   const { theme, toggle } = useTheme();
   const { user, login, logout } = useAuth();
@@ -146,6 +147,20 @@ export default function Navbar() {
           {/* ── ACTIONS ──────────────────────────────── */}
           <div className="nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0, position: 'relative', zIndex: 1 }}>
 
+            {/* Hamburger Button (Mobile Only) */}
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              style={{
+                background: 'transparent', border: 'none', color: '#fff',
+                cursor: 'pointer', padding: '0.4rem', zIndex: 1,
+              }}
+            >
+              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+
             {/* Theme Toggle Button */}
             <button
               onClick={toggle}
@@ -272,9 +287,35 @@ export default function Navbar() {
             )}
           </div>
         </nav>
+        
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div style={{
+            position: 'absolute', top: '70px', left: 0, right: 0,
+            background: 'rgba(15, 5, 30, 0.95)', backdropFilter: 'blur(20px)',
+            border: '1px solid rgba(168,85,247,0.22)', borderRadius: '16px',
+            padding: '1rem', boxShadow: '0 10px 40px rgba(0,0,0,0.5)', zIndex: 200,
+            display: 'flex', flexDirection: 'column', gap: '0.5rem'
+          }}>
+            {NAV_LINKS.map(({ label, href, to }, i) => (
+              <div key={label} onClick={() => setMobileMenuOpen(false)}>
+                {to ? (
+                  <Link to={to} style={{ ...dropdownItemStyle, fontSize: '1rem' }}>{label}</Link>
+                ) : (
+                  <a href={href} style={{ ...dropdownItemStyle, fontSize: '1rem' }}>{label}</a>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <style>{`
+        .mobile-menu-btn { display: none !important; }
+        @media (max-width: 850px) {
+          .nav-center-links { display: none !important; }
+          .mobile-menu-btn { display: flex !important; }
+        }
         @keyframes dotPulse {
           0%,100% { opacity:1; box-shadow:0 0 6px #10b981; }
           50%      { opacity:0.4; box-shadow:0 0 2px #10b981; }

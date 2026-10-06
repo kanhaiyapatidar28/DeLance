@@ -29,8 +29,8 @@
 }
 
 .hero-tagline {
-  font-family: Inter, sans-serif; font-size: 0.9rem; color: var(--muted);
-  max-width: 380px; line-height: 1.6; margin-top: 0.5rem;
+  font-family: Inter, sans-serif; font-size: 1.05rem; color: var(--muted);
+  max-width: 440px; line-height: 1.6; margin-top: 0.5rem;
 }
 
 .hero-search-wrap {
@@ -511,7 +511,7 @@ html.dark .workmanship-glass-card {
   .hero-bottom > div:last-child { margin-left: 0 !important; width: 100%; margin-top: 1rem; }
   
   /* Form & Search - Horizontal Pill Bar Style */
-  .hero-search-wrap { width: 100% !important; max-width: 100% !important; }
+  .hero-search-wrap { width: 85% !important; max-width: 360px !important; }
   #heroSearchBar {
     display: flex !important;
     flex-direction: row !important;
