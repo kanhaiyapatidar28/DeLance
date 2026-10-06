@@ -109,6 +109,7 @@ const StatueAnimation = () => {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => setIsHovered(!isHovered)}
       data-is-hovered={isHovered}
     >
       {/* DEFAULT IMAGE — person with laptop; fades out on hover */}
